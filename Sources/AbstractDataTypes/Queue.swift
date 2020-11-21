@@ -16,7 +16,7 @@ import Foundation
 /// *Dequeued* elements are removed from the start of the queue.
 public struct Queue<Element> {
     
-    private let list = LinkedList<Element>()
+    private var list = LinkedList<Element>()
     
     /// A Boolean value indicating whether the queue is empty.
     public var isEmpty: Bool {
@@ -37,6 +37,7 @@ public struct Queue<Element> {
     /// - Complexity: O(1)
     /// - Parameter element: The element to insert at the back of the queue.
     public mutating func enqueue(_ element: Element) {
+        copyList()
         list.insertLast(element)
     }
     
@@ -44,6 +45,20 @@ public struct Queue<Element> {
     /// - Complexity: O(1)
     /// - Returns: The first element of the queue if the queue is not empty; otherwise, `nil`.
     public mutating func dequeue() -> Element? {
-        list.removeFirst()
+        copyList()
+        return list.removeFirst()
+    }
+    
+    private mutating func copyList() {
+        guard !isKnownUniquelyReferenced(&list) else { return }
+        
+        let newList = LinkedList<Element>()
+        var oldNode = list.head
+        while let node = oldNode {
+            newList.insertLast(node.value)
+            oldNode = node.next
+        }
+        
+        list = newList
     }
 }

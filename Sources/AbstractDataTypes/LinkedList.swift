@@ -36,9 +36,15 @@ public class Node<Value> {
 /// An advantage to using a linked list as opposed to an `Array` is that inserting and removing objects from the front of the list is done in constant-time.
 public class LinkedList<Value> {
     
-    private var head: Node<Value>?
+    /// The `node` object at the front of the list.
+    ///
+    /// If the list is empty, the value of this property is `nil`.
+    public var head: Node<Value>?
     
-    private var tail: Node<Value>?
+    /// The `node` object at the end of the list.
+    ///
+    /// If the list is empty, the value of this property is `nil`.
+    public var tail: Node<Value>?
     
     /// A Boolean value indicating whether the list is empty.
     public var isEmpty: Bool {
