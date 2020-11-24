@@ -46,7 +46,7 @@ final class StackTests: XCTestCase {
         sut.push(2)
         
         // then
-        XCTAssertEqual(sut.pop(), 2)
+        XCTAssertEqual(sut.peek, 2)
     }
     
     func testStackPushMethodInsertsValueToTopOfStack() {
@@ -56,10 +56,9 @@ final class StackTests: XCTestCase {
         // when
         sut.push(1)
         sut.push(2)
-        sut.push(3)
         
         // then
-        XCTAssertEqual(sut.peek, 3)
+        XCTAssertNotEqual(sut.peek, 1)
     }
     
     func testEmptyStackPopMethodReturnsNil() {
