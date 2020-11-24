@@ -1,7 +1,1 @@
-import XCTest
-
-import AbstractDataTypesTests
-
-var tests = [XCTestCaseEntry]()
-tests += AbstractDataTypesTests.allTests()
-XCTMain(tests)
+fatalError("Run tests with `swift test --enable-test-discovery`")
