@@ -15,3 +15,6 @@ A Swift package for common abstract data types (ADTs).
 
 ## Documentation
 To learn more, check out the [documentation](https://ljrocha.com/AbstractDataTypes).
+
+## License
+Released under the [MIT license](./LICENSE.md).
