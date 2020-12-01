@@ -4,3 +4,13 @@ osx_image: xcode12.2
 script:
   - swift build
   - swift test
+after_success:
+  - gem install jazzy
+  - jazzy
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: docs
+  on:
+    branch: master
