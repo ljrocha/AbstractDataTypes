@@ -4,9 +4,10 @@
 
 A Swift package for common abstract data types (ADTs).
 
-## Abstract Data Types
+## Data Structures
 - Stack
 - Queue
+- Node
 - Linked List
 
 ## Requirements
